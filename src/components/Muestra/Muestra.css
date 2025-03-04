@@ -1,0 +1,52 @@
+/* Contenedor general con fondo negro y texto blanco */
+.muestra-container {
+    padding: 2rem;
+    background-color: #000; /* Fondo negro */
+    color: #fff;            /* Texto blanco */
+  }
+  
+  /* Espaciado entre las tarjetas */
+  .muestra-container .row {
+    gap: 1.5rem;
+  }
+  
+  /* Tarjetas con transición y efecto hover */
+  .muestra-container .card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: transparent; /* Para que no tenga fondo blanco */
+    border: none;                  /* Elimina el borde por defecto */
+  }
+  
+  /* Efecto al pasar el mouse: agrandar y añadir sombra */
+  .muestra-container .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Imagen de la tarjeta */
+  .muestra-container .card-img-top {
+    height: 250px; /* Ajusta este valor para hacerla más grande o pequeña */
+    object-fit: cover;
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+  }
+  
+  /* Título de la tarjeta (texto blanco) */
+  .muestra-container .card-title {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
+  /* Descripción de la tarjeta: forzar color blanco */
+  .muestra-container .card-text {
+    color: #fff;
+  }
+  
+  /* Título principal (texto blanco) */
+  .muestra-container h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  

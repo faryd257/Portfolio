@@ -1,0 +1,15 @@
+main{
+    background-color: #000; /* Negro puro */
+    color: white; /* Texto en blanco para contraste */
+    padding: 20px;
+    min-height: 100vh;
+}
+/* Fondo negro para toda la página */
+
+  /* Asegura que todos los elementos ocupen toda la altura */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  

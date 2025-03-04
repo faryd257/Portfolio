@@ -1,0 +1,128 @@
+/* Sección principal */
+.espacio {
+    position: relative;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Contenedor del contenido */
+.espacio-content {
+    position: relative;
+    z-index: 2; /* Asegura que el contenido quede sobre la imagen */
+    padding-top: 40px; /* Ajusta la posición vertical */
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Mensaje de saludo */
+.espacio-greeting {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 15px;
+    backdrop-filter: blur(5px);
+}
+
+/* Título */
+.espacio-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.espacio-title span {
+    color: #8f44fd; /* Color violeta llamativo */
+}
+
+/* Descripción */
+.espacio-description {
+    font-size: 1.1rem;
+    max-width: 1000px;
+    margin: 10px auto 0;
+    line-height: 1.5;
+    opacity: 1;
+}
+
+/* Imagen de fondo (Tierra Oscura) */
+.espacio-background {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    pointer-events: none;
+}
+
+.espacio-background img {
+    width: 1000px;
+    max-width: 100%;
+    animation: fadeIn 2s ease-in-out;
+    display: block;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Ajustes responsivos para pantallas medianas */
+@media (max-width: 768px) {
+    .espacio-title {
+        font-size: 2.5rem;
+    }
+    .espacio-description {
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+    .espacio-greeting {
+        font-size: 1.3rem;
+        padding: 6px 12px;
+    }
+    .espacio-background {
+        top: 20%;
+    }
+    .espacio-background img {
+        width: 400px;
+    }
+}
+
+/* Ajustes adicionales para pantallas pequeñas (celulares) */
+@media (max-width: 480px) {
+    .espacio {
+        height: auto; /* Permite que el contenido se ajuste en caso de ser muy alto */
+        padding: 40px 10px;
+    }
+    .espacio-title {
+        font-size: 2rem;
+    }
+    .espacio-description {
+        font-size: 0.9rem;
+    }
+    .espacio-greeting {
+        font-size: 1.1rem;
+        padding: 4px 10px;
+    }
+    .espacio-background {
+        top: 25%;
+    }
+    .espacio-background img {
+        width: 300px;
+    }
+}

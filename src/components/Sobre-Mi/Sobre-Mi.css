@@ -1,0 +1,22 @@
+
+  /* Párrafo de la sección "Sobre mí": tamaño de letra mayor, texto centrado */
+
+  section{ padding-bottom: 20%;}
+  .sobre-mi-parrafo {
+    font-size: 1.45rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+
+  }
+  
+  /* Encabezado (h3) del CV con fondo blanco y texto en negro */
+  .cv-header {
+  
+    display: inline-block; /* Ajusta el ancho del fondo al texto */
+    font-size: 1.75rem;
+    line-height: 1.4;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+  

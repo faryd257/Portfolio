@@ -1,0 +1,27 @@
+
+
+/* Fondo negro para toda la página */
+body {
+ 
+  color: white; /* Texto en blanco para contraste */
+}
+
+/* Asegura que todos los elementos ocupen toda la altura */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+a{
+  color: black;
+}
