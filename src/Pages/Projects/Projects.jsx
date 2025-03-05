@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Layout } from "../../components/Layout/Layout";
-import './projects.css'; // Archivo CSS personalizado para la página de Projects
+import './Projects.css'; // Archivo CSS personalizado para la página de Projects
 
 const Projects = () => {
   const navigate = useNavigate();
