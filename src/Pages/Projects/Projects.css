@@ -1,86 +1,106 @@
-/* Contenedor general para la página de Projects */
+/* Fondo general oscuro neutro, tarjetas negras con letras blancas */
 .projects-container {
-    padding: 2rem;
-    background-color: #000; /* Fondo negro */
-    color: #fff;            /* Texto blanco */
-    min-height: 100vh;      /* Rellenar toda la página */
+  padding: 2rem;
+  background-color: #1a1a1a; /* gris oscuro suave */
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Título principal destacado */
+.projects-container h1 {
+  font-size: 2.8rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeInTop 1s ease-out;
+}
+
+/* Animación título */
+@keyframes fadeInTop {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tarjetas con fondo negro puro y texto blanco */
+.project-card {
+  background-color: #000;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: cardFadeIn 0.8s ease forwards;
+}
+
+/* Animación de tarjetas secuencial */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover dinámico para tarjetas */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Imagen con borde inferior decorativo */
+.project-card .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 2px solid #333;
+}
+
+/* Títulos y textos en tarjeta */
+.project-card .card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.project-card .card-text,
+.project-card .additional-info {
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* Estilo dinámico de botones */
+.project-card .btn {
+  border-radius: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card .btn-primary {
+  background-color: #6200ea;
+  border: none;
+}
+
+.project-card .btn-outline-light {
+  border-color: #ccc;
+  color: #fff;
+}
+
+.project-card .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(255,255,255,0.15);
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 1rem;
   }
-  
-  /* Título principal */
-  .projects-container h1 {
-    color: #fff;
-    text-align: center;
-    margin-bottom: 2rem;
-    animation: fadeInDown 1s ease-in-out;
-  }
-  
-  /* Animación de entrada para el título */
-  @keyframes fadeInDown {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Tarjetas de proyecto con animación y hover */
-  .project-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
-  }
-  
-  /* Animación de entrada para las tarjetas */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Imagen de la tarjeta */
+
   .project-card .card-img-top {
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
+    height: 180px;
   }
-  
-  /* Título y descripción de la tarjeta */
-  .project-card .card-title,
-  .project-card .card-text {
-    color: #fff;
+
+  .projects-container h1 {
+    font-size: 2.2rem;
   }
-  
-  /* Botones de Demo y Código */
-  .project-card .btn {
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .project-card .btn:hover {
-    opacity: 0.9;
-  }
-  
-  /* Responsividad adicional, si es necesario */
-  @media (max-width: 576px) {
-    .project-card .card-img-top {
-      height: 200px;
-    }
-    .projects-container {
-      padding: 1rem;
-    }
-  }
-  
+}
