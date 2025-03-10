@@ -1,39 +1,138 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+// Header.jsx
+import { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const cerrarMenu = () => {
     setMenuAbierto(false);
   };
 
-  return (
-    <header className="header">
-      {/* Foto de perfil con enlace a LinkedIn */}
-      <a href="https://www.linkedin.com/in/faryd-ignacio-ortiz/" target="_blank" rel="noopener noreferrer" className="perfil">
-      <img src="/profile.png" alt="Mi perfil de LinkedIn" />
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
+  const irAlEspacio = () => {
+    if (location.pathname === "/") {
+      const seccionEspacio = document.getElementById("espacio");
+      if (seccionEspacio) {
+        seccionEspacio.scrollIntoView({ behavior: "smooth" });
+      }
+      cerrarMenu();
+    } else {
+      navigate("/#espacio");
+      cerrarMenu();
+    }
+  };
+
+  const irASobreMi = () => {
+    if (location.pathname === "/") {
+      const seccionSobreMi = document.getElementById("sobreMi");
+      if (seccionSobreMi) {
+        seccionSobreMi.scrollIntoView({ behavior: "smooth" });
+      }
+      cerrarMenu();
+    } else {
+      navigate("/#sobreMi");
+      cerrarMenu();
+    }
+  };
+
+  const irAProyectos = () => {
+    if (location.pathname === "/") {
+      const seccionProyectos = document.getElementById("proyectos");
+      if (seccionProyectos) {
+        seccionProyectos.scrollIntoView({ behavior: "smooth" });
+      }
+      cerrarMenu();
+    } else {
+      navigate("/#proyectos");
+      cerrarMenu();
+    }
+  };
+
+  // Nueva función para ir a #formacion
+  const irAFormacion = () => {
+    if (location.pathname === "/") {
+      const seccionFormacion = document.getElementById("formacion");
+      if (seccionFormacion) {
+        seccionFormacion.scrollIntoView({ behavior: "smooth" });
+      }
+      cerrarMenu();
+    } else {
+      navigate("/#formacion");
+      cerrarMenu();
+    }
+  };
+
+  return (
+    <header className={`header ${scrolled ? "header-scrolled" : ""}`}>
+      <a
+        href="https://www.linkedin.com/in/faryd-ignacio-ortiz/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="perfil"
+      >
+        <img src="/profile.png" alt="Mi perfil de LinkedIn" />
       </a>
 
-      {/* Icono del menú en móvil */}
-      <button className="menu-icono" onClick={() => setMenuAbierto(!menuAbierto)}>
+      <button
+        className="menu-icono"
+        onClick={() => setMenuAbierto(!menuAbierto)}
+      >
         ☰
       </button>
 
-      {/* Menú de navegación */}
       <nav className={menuAbierto ? "menu abierto" : "menu"}>
         <ul>
-          <li><Link to="/" onClick={cerrarMenu}>Home</Link></li>
-          <li><Link to="/Projects" onClick={cerrarMenu}>Projects</Link></li>
-           <li><Link to="/Contacto" onClick={cerrarMenu}>Contacto</Link></li>
-         
+          <li>
+            <button className="btn-enlace" onClick={irAlEspacio}>
+              inicio
+            </button>
+          </li>
+          <li>
+            <button className="btn-enlace" onClick={irASobreMi}>
+              Sobre Mi
+            </button>
+          </li>
+          <li>
+            <button className="btn-enlace" onClick={irAProyectos}>
+              Proyectos
+            </button>
+          </li>
+
+          {/* NUEVO: Botón para Formacion */}
+          <li>
+            <button className="btn-enlace" onClick={irAFormacion}>
+              Formación
+            </button>
+          </li>
+
+          <li>
+            <Link to="/Contacto" onClick={cerrarMenu}>
+              Contacto
+            </Link>
+          </li>
         </ul>
 
-        {/* Botón para cerrar el menú SOLO en móviles */}
         {menuAbierto && (
-          <button className="cerrar-menu" onClick={cerrarMenu}>Cerrar</button>
+          <button className="cerrar-menu" onClick={cerrarMenu}>
+            Cerrar
+          </button>
         )}
       </nav>
     </header>

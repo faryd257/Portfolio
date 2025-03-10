@@ -1,6 +1,5 @@
 import "./Footer.css"; // Importa el CSS separado
 
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -15,10 +14,15 @@ const Footer = () => {
             rel="noreferrer"
             className="dev-link"
           >
-            FARYD ORTIZ
+            Faryd I.T. Ortiz Abalos
           </a>
         </p>
         <p className="rights-info">&copy; {currentYear} Todos los derechos reservados</p>
+
+        {/* Correo en un costado */}
+        <a href="mailto:OrtizFaryd.I.T@gmail.com" className="correo-lateral">
+          OrtizFaryd.I.T@gmail.com
+        </a>
       </div>
     </footer>
   );

@@ -1,5 +1,5 @@
 
-  /* Párrafo de la sección "Sobre mí": tamaño de letra mayor, texto centrado */
+
 
   section{ padding-bottom: 20%;}
   .sobre-mi-parrafo {
@@ -10,10 +10,10 @@
 
   }
   
-  /* Encabezado (h3) del CV con fondo blanco y texto en negro */
+
   .cv-header {
   
-    display: inline-block; /* Ajusta el ancho del fondo al texto */
+    display: inline-block;
     font-size: 1.75rem;
     line-height: 1.4;
     padding: 0.5rem 1rem;
