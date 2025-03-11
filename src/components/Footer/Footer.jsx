@@ -1,28 +1,30 @@
-import "./Footer.css"; // Importa el CSS separado
+import "./Footer.css";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="my-footer">
-      <div className="container text-center py-3">
-        <p className="developer-info">
-          Sitio desarrollado por{" "}
-          <a
-            href="https://www.linkedin.com/in/faryd-ignacio-ortiz/"
-            target="_blank"
-            rel="noreferrer"
-            className="dev-link"
-          >
-            Faryd I.T. Ortiz Abalos
+    <footer className="footer-container">
+      <div className="footer-content">
+       
+        
+        <div className="footer-links">
+          <a href="https://www.linkedin.com/in/faryd-ignacio-ortiz/" target="_blank" rel="noreferrer">
+            <FaLinkedin className="icon" /> LinkedIn
           </a>
-        </p>
-        <p className="rights-info">&copy; {currentYear} Todos los derechos reservados</p>
-
-        {/* Correo en un costado */}
-        <a href="mailto:OrtizFaryd.I.T@gmail.com" className="correo-lateral">
-          OrtizFaryd.I.T@gmail.com
-        </a>
+          <a href="https://github.com/faryd257/Portfolio" target="_blank" rel="noreferrer">
+            <FaGithub className="icon" /> GitHub
+          </a>
+          <a href="mailto:OrtizFaryd.I.T@gmail.com">
+            <FaEnvelope className="icon" /> Gmail
+          </a>
+        </div>
+      </div>
+      
+      <div className="footer-bottom">
+        <p>&copy; {currentYear} Todos los derechos reservados.</p>
+        <p>Portafolio creado por <strong>Faryd I.T. Ortiz Abalos</strong> | Construido en <strong>React.js</strong></p>
       </div>
     </footer>
   );

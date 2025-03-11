@@ -12,7 +12,16 @@ const Muestra = () => {
       urlImg: '/muestras/cerveceria.png',
       descripcion: 'Sitio web para una cervecería artesanal, con menú interactivo y sistema de reservas.',
       demoLink: 'https://cerveceria-nu.vercel.app/', 
-      codigoLink: 'https://github.com/usuario/cerveceria-project'
+      codigoLink: 'https://github.com/faryd257/cerveceria'
+    },
+   
+    {
+      id: 3,
+      titulo: 'Proyecto 3',
+      urlImg: '/muestras/tienda.png',
+      descripcion: 'E-commerce de productos con carrito de compras, pasarela de pagos y panel de administrador.',
+      demoLink: 'https://productos-xi.vercel.app/',
+      codigoLink: 'https://github.com/faryd257/trabajo-practico-2-react'
     },
     {
       id: 2,
@@ -20,15 +29,7 @@ const Muestra = () => {
       urlImg: '/muestras/historia2.png',
       descripcion: 'Landing page para un evento histórico, con secciones de cronología y galería de fotos.',
       demoLink: 'https://programacion-e-historia.vercel.app/ ',
-      codigoLink: 'https://github.com/usuario/historia2'
-    },
-    {
-      id: 3,
-      titulo: 'Proyecto 3',
-      urlImg: '/muestras/tienda.png',
-      descripcion: 'E-commerce de productos con carrito de compras, pasarela de pagos y panel de administrador.',
-      demoLink: 'https://productos-xi.vercel.app/',
-      codigoLink: 'https://github.com/usuario/tienda'
+      codigoLink: 'https://github.com/faryd257/html-css-y-javascript-avanzado'
     },
     {
       id: 4,
@@ -36,7 +37,7 @@ const Muestra = () => {
       urlImg: '/muestras/portfolio.png',
       descripcion: 'Mi portafolio personal con secciones de proyectos, blog y contacto.',
       demoLink: 'https://ejemplo-portfolio.com',
-      codigoLink: 'https://github.com/usuario/portfolio'
+      codigoLink: 'https://github.com/faryd257/Portfolio'
     },
   ];
 
