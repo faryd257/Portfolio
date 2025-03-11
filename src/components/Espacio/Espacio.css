@@ -1,4 +1,3 @@
-/* Sección principal */
 .espacio {
     position: relative;
     color: white;
@@ -11,16 +10,14 @@
     overflow: hidden;
 }
 
-/* Contenedor del contenido */
 .espacio-content {
     position: relative;
-    z-index: 2; /* Asegura que el contenido quede sobre la imagen */
-    padding-top: 40px; /* Ajusta la posición vertical */
+    z-index: 2;
+    padding-top: 40px;
     padding-left: 20px;
     padding-right: 20px;
 }
 
-/* Mensaje de saludo */
 .espacio-greeting {
     font-size: 1.5rem;
     font-weight: bold;
@@ -31,7 +28,6 @@
     backdrop-filter: blur(5px);
 }
 
-/* Título */
 .espacio-title {
     font-size: 4rem;
     font-weight: bold;
@@ -41,10 +37,9 @@
 }
 
 .espacio-title span {
-    color: #8f44fd; /* Color violeta llamativo */
+    color: #8f44fd;
 }
 
-/* Descripción */
 .espacio-description {
     font-size: 1.1rem;
     max-width: 1000px;
@@ -53,7 +48,6 @@
     opacity: 1;
 }
 
-/* Imagen de fondo (Tierra Oscura) */
 .espacio-background {
     position: absolute;
     top: 15%;
@@ -70,7 +64,6 @@
     display: block;
 }
 
-/* Animación de entrada */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -82,7 +75,6 @@
     }
 }
 
-/* Ajustes responsivos para pantallas medianas */
 @media (max-width: 768px) {
     .espacio-title {
         font-size: 2.5rem;
@@ -103,10 +95,9 @@
     }
 }
 
-/* Ajustes adicionales para pantallas pequeñas (celulares) */
 @media (max-width: 480px) {
     .espacio {
-        height: auto; /* Permite que el contenido se ajuste en caso de ser muy alto */
+        height: auto;
         padding: 40px 10px;
     }
     .espacio-title {

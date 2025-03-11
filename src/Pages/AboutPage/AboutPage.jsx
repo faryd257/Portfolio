@@ -1,4 +1,4 @@
-// src/pages/AbouutPage/AbouutPage.jsx
+
 
 import { Layout } from "../../components/Layout/Layout";
 

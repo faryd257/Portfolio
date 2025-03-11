@@ -23,10 +23,9 @@ const Contacto = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Colección de mensajes en Firestore
     const mensajesRef = collection(firestore, "mensajes");
 
-    // Agregar documento nuevo con los datos
+
     addDoc(mensajesRef, formData)
       .then(() => {
         alert("¡Mensaje enviado correctamente!");

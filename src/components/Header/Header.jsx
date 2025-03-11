@@ -65,7 +65,6 @@ const Header = () => {
     }
   };
 
-  // Nueva función para ir a #formacion
   const irAFormacion = () => {
     if (location.pathname === "/") {
       const seccionFormacion = document.getElementById("formacion");
@@ -115,7 +114,6 @@ const Header = () => {
             </button>
           </li>
 
-          {/* NUEVO: Botón para Formacion */}
           <li>
             <button className="btn-enlace" onClick={irAFormacion}>
               Formación

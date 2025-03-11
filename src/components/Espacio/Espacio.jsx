@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import "./Espacio.css"; // Archivo de estilos
-import planetImage from "../../assets/tierraoscura.jpg"; // Imagen de fondo
+import "./Espacio.css"; 
+import planetImage from "../../assets/tierraoscura.jpg"; 
 
 import { CarouselMarquee } from "../CarouselMarquee/CarouselMarquee.jsx";
 
@@ -19,7 +19,7 @@ const Espacio = () => {
           Desarrollador Web de Buenos Aires, Argentina. Me especializo en desarrollo Front-end, con experiencia en la creación de interfaces de usuario eficientes y visualmente atractivas.
         </p>
       </div>
-      {/* Imagen de fondo */}
+   
       <div className="espacio-background">
         <img src={planetImage} alt="Tierra Oscura" />
       </div>

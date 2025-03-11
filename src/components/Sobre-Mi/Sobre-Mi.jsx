@@ -4,7 +4,7 @@ import "./Sobre-Mi.css";
 const SobreMi = () => {
   return (
     <section className="sobre-mi-section text-white py-5">
-      {/* Sección principal de "Sobre mí", centrada */}
+     
       <div className="container text-center">
         <h2 className="display-4 mb-4">Sobre mí</h2>
         <p className="sobre-mi-parrafo">
@@ -20,7 +20,7 @@ const SobreMi = () => {
         </p>
       </div>
 
-      {/* Sección para el CV, margen adicional y alineada a la izquierda */}
+     
       <div className="container mt-5 text-start">
         <div className="row justify-content-start">
           <div className="col-md-8">

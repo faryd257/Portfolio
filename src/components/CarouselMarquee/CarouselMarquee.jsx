@@ -30,7 +30,7 @@ const CarouselMarquee = () => {
             <span>{tech.name}</span>
           </div>
         ))}
-        {/* Repetimos para efecto continuo (opcional) */}
+      
         {techs.map((tech) => (
           <div key={tech.name + "2"} className="tech-item">
             {tech.icon}

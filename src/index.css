@@ -1,12 +1,12 @@
 
 
-/* Fondo negro para toda la página */
+
 body {
  
-  color: white; /* Texto en blanco para contraste */
+  color: white;
 }
 
-/* Asegura que todos los elementos ocupen toda la altura */
+
 html, body {
   height: 100%;
   margin: 0;

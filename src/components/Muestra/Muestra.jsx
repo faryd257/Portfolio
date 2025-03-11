@@ -42,7 +42,7 @@ const Muestra = () => {
   ];
 
   const handleClick = () => {
-    // Ejemplo: redirigir a tu ruta de proyectos detallados
+
     navigate('/');
   };
 
@@ -62,7 +62,7 @@ const Muestra = () => {
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title text-center">{titulo}</h5>
                 <p className="card-text">{descripcion}</p>
-                {/* Botones de Demo y Código */}
+                
                 <div className="mt-auto d-flex justify-content-around">
                   <a
                     href={demoLink}
