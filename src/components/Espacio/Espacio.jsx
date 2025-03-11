@@ -11,7 +11,7 @@ const Espacio = () => {
   return (
     <section className="espacio">
       <div className="espacio-content">
-        <p className="espacio-greeting">Hola Soy Faryd Ortiz 👋</p>
+      <p className="espacio-greeting">¡Bienvenido a mi Portafolio!</p>
         <h1 className="espacio-title">
           <span>FrontEnd</span> Developer.
         </h1>
