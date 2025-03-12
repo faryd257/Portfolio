@@ -16,16 +16,16 @@ const Muestra = () => {
     },
    
     {
-      id: 3,
-      titulo: 'Proyecto 3',
+      id: 2,
+      titulo: 'Proyecto 2',
       urlImg: '/muestras/tienda.png',
       descripcion: 'E-commerce de productos con carrito de compras, pasarela de pagos y panel de administrador.',
       demoLink: 'https://productos-xi.vercel.app/',
       codigoLink: 'https://github.com/faryd257/trabajo-practico-2-react'
     },
     {
-      id: 2,
-      titulo: 'Proyecto 2',
+      id: 3,
+      titulo: 'Proyecto 3',
       urlImg: '/muestras/historia2.png',
       descripcion: 'Landing page para un evento histórico, con secciones de cronología y galería de fotos.',
       demoLink: 'https://programacion-e-historia.vercel.app/ ',
