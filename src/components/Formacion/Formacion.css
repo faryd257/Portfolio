@@ -1,28 +1,30 @@
+.certificaciones {
+  padding: 40px 0;
+  text-align: center; /* Asegura que todo esté centrado en la sección */
+}
+
+.certificaciones .btn-outline-primary {
+  margin-top: 1rem; /* Espacio entre la frase y el botón */
+}
 
 .dynamic-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 20px;
-  }
-  
-  .dynamic-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  }
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
 
-  .dynamic-img {
-    max-height: 500px; 
-    object-fit: cover;
-  }
-  
- 
-  .text-background {
-    background-color: #f8f9fa; 
-    padding: 1rem;
-    border-radius: 0 0 0.25rem 0.25rem;
-  }
- 
-  .certificaciones {
-    padding: 40px 0;
-  }
-  
+.dynamic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dynamic-img {
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.text-background {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0 0 0.25rem 0.25rem;
+}

@@ -30,8 +30,7 @@ const Formacion = () => {
     {
       id: 5,
       titulo: "Certificado de Html5  Css3 y JavaScript",
-      descripcion:
-        "Curso de Html5  Css3 y JavaScript (Nivel Avanzado) en [UTN].",
+      descripcion: "Curso de Html5  Css3 y JavaScript (Nivel Avanzado) en [UTN].",
       imagen: "/certificados/5.png",
     },
     {
@@ -43,7 +42,7 @@ const Formacion = () => {
     {
       id: 7,
       titulo: "Professional Front End Developer",
-      descripcion: "Curso de  Professional Front End Developer [UTN].",
+      descripcion: "Curso de Professional Front End Developer [UTN].",
       imagen: "/certificados/7.png",
     },
     {
@@ -55,7 +54,7 @@ const Formacion = () => {
     {
       id: 9,
       titulo: "Certificado de React JS",
-      descripcion: "Curso de  Desarrollo en React JS en [UTN].",
+      descripcion: "Curso de Desarrollo en React JS en [UTN].",
       imagen: "/certificados/8.png",
     },
   ];
@@ -79,8 +78,8 @@ const Formacion = () => {
       </div>
 
       <div className="row mb-4">
-        <div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center">
-          <h5 className="mb-3 mb-md-0">
+        <div className="col-12 text-center">
+          <h5 className="mb-3">
             Selecciona una de mis certificaciones para verla en detalle:
           </h5>
           <button
@@ -90,7 +89,7 @@ const Formacion = () => {
             data-bs-target="#offcanvasCertificados"
             aria-controls="offcanvasCertificados"
           >
-            <span className="navbar-toggler-icon"></span> Menú de Certificados
+            <span className="navbar-toggler"></span> Menú de Certificados
           </button>
         </div>
       </div>

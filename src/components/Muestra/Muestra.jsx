@@ -49,7 +49,7 @@ const Muestra = () => {
   return (
     <div className="muestra-container">
       <h1 className="text-center mb-4">Aquí mostraré mis proyectos</h1>
-      <div className="row row-cols-1 row-cols-md-2 justify-content-center">
+   <div className="row row-cols-1 row-cols-md-2 justify-content-center">
 
         {proyectos.map(({ id, titulo, urlImg, descripcion, demoLink, codigoLink }) => (
           <div className="col" key={id}>
