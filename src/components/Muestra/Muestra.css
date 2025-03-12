@@ -2,42 +2,96 @@
   padding: 2rem;
   background-color: #000;
   color: #fff;
-}
-
-.muestra-container .row {
-  gap: 1.5rem;
-}
-
-.muestra-container .card {
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-}
-
-.muestra-container .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-}
-
-.muestra-container .card-img-top {
-  height: 250px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.muestra-container .card-title {
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #fff;
-}
-
-.muestra-container .card-text {
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .muestra-container h1 {
-  color: #fff;
+  color: #8f44fd;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(143, 68, 253, 0.6);
+}
+
+.muestra-container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+}
+
+.muestra-container .col {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 calc(50% - 2rem);
+  max-width: calc(50% - 2rem);
+}
+
+.muestra-container .card {
+  background-color: #121212;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(143, 68, 253, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.muestra-container .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(143, 68, 253, 0.5);
+}
+
+.muestra-container .card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #8f44fd;
+}
+
+.muestra-container .card-title {
+  font-weight: 700;
+  color: #8f44fd;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.muestra-container .card-text {
+  color: #ddd;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.muestra-container .btn {
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.muestra-container .btn-primary {
+  background-color: #8f44fd;
+  border: none;
+}
+
+.muestra-container .btn-primary:hover {
+  background-color: #6a11cb;
+}
+
+.muestra-container .btn-outline-light {
+  color: #8f44fd;
+  border-color: #8f44fd;
+}
+
+.muestra-container .btn-outline-light:hover {
+  background-color: #8f44fd;
+  color: #fff;
+}
+
+
+@media (max-width: 768px) {
+  .muestra-container .col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
