@@ -1,5 +1,5 @@
 .carousel-marquee {
-  width: 67%;
+  width: 70%;
   margin: 0 auto;
   overflow: hidden;
   padding: 20px 0;
@@ -10,14 +10,14 @@
 
 .marquee-content {
   display: flex;
-  width: fit-content; /* Permite que el contenido fluya correctamente */
+  width: fit-content;
   animation: marquee 25s linear infinite;
-  gap: 30px; /* Espaciado entre iconos */
+  gap: 30px; 
 }
 
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(70%);
   }
   100% {
     transform: translateX(-100%);
@@ -66,7 +66,7 @@
   color: #222;
 }
 
-/* 📱 Modo Tablet y Celular */
+
 @media (max-width: 768px) {
   .carousel-marquee {
     width: 100%;
@@ -86,7 +86,7 @@
 
 @media (max-width: 480px) {
   .carousel-marquee {
-    width: 100%;
+    width: 80%;
   }
   .marquee-content {
     animation: marquee 25s linear infinite;
