@@ -1,14 +1,18 @@
 .carousel-marquee {
-  width: 37%;
+  width: 67%;
   margin: 0 auto;
   overflow: hidden;
   padding: 20px 0;
   z-index: 10;
+  display: flex;
+  justify-content: center;
 }
 
 .marquee-content {
   display: flex;
-  animation: marquee 12s linear infinite;
+  width: fit-content; /* Permite que el contenido fluya correctamente */
+  animation: marquee 25s linear infinite;
+  gap: 30px; /* Espaciado entre iconos */
 }
 
 @keyframes marquee {
@@ -20,9 +24,8 @@
   }
 }
 
-
 .tech-item {
-  min-width: 120px;
+  min-width: 100px;
   margin: 0 24px;
   display: flex;
   flex-direction: column;
@@ -32,8 +35,8 @@
 }
 
 .tech-item svg {
-  width: 80px;  
-  height: 80px;
+  width: 90px;
+  height: 90px;
 }
 
 .tech-item:hover {
@@ -47,7 +50,7 @@
 
 /* 🌑 Modo Oscuro */
 .carousel-marquee.dark {
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 .tech-item {
@@ -56,22 +59,44 @@
 
 /* 🌞 Modo Claro */
 .carousel-marquee.light {
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 .carousel-marquee.light .tech-item {
   color: #222;
 }
 
-
+/* 📱 Modo Tablet y Celular */
 @media (max-width: 768px) {
+  .carousel-marquee {
+    width: 100%;
+  }
   .marquee-content {
-    animation: marquee 7s linear infinite; 
+    animation: marquee 10s linear infinite;
+    gap: 20px; 
+  }
+  .tech-item {
+    min-width: 80px;
+  }
+  .tech-item svg {
+    width: 70px;
+    height: 70px;
   }
 }
 
 @media (max-width: 480px) {
+  .carousel-marquee {
+    width: 100%;
+  }
   .marquee-content {
-    animation: marquee 5s linear infinite; 
+    animation: marquee 25s linear infinite;
+    gap: 15px;
+  }
+  .tech-item {
+    min-width: 60px;
+  }
+  .tech-item svg {
+    width: 60px;
+    height: 60px;
   }
 }
