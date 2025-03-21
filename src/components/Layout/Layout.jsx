@@ -1,19 +1,18 @@
-import { Footer } from "../Footer/Footer"
-import { Header } from "../Header/Header"
-import "./Layout.css"
+import { Header } from '../Header/Header';
+import { Footer } from '../Footer/Footer';
+import { Outlet } from 'react-router-dom';
+import './Layout.css';
 
-// eslint-disable-next-line react/prop-types
-const Layout = ({children})=>{
-    return (
-        <>
-<Header/>
+ const Layout = () => {
+  return (
+    <>
+      <Header />
+        <main>
+          <Outlet /> {/* Aquí se renderizan automáticamente tus rutas */}
+        </main>
+      <Footer />
+    </>
+  );
+};
 
-    <main>{children}</main>
-<Footer/>
-
-</>
-
-    )
-}
-
-export{Layout}
+export {Layout}

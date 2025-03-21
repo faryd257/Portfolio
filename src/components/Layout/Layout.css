@@ -1,15 +1,9 @@
-main{
-    background-color: #000; /* Negro puro */
-    color: white; /* Texto en blanco para contraste */
-    padding: 20px;
-    min-height: 100vh;
+main {
+  background-color: #000; 
+  color: white;
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0; 
 }
-/* Fondo negro para toda la página */
-
-  /* Asegura que todos los elementos ocupen toda la altura */
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  

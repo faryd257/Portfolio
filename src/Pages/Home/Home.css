@@ -1,0 +1,12 @@
+
+.home-container.dark {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  /* 🌞 Home modo claro 🌞 */
+  .home-container.light {
+    background-color: #f9f9f9;
+    color: #222;
+  }
+  

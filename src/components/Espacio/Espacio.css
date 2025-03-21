@@ -1,31 +1,37 @@
+
 .espacio {
     position: relative;
     color: white;
     text-align: center;
-    height: 70vh;
+    height: 100vh; 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    width: 100%;
+    padding: 20px;
 }
+
 
 .espacio-content {
     position: relative;
     z-index: 2;
-    padding-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 40px 20px;
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
 }
+
 
 .espacio-greeting {
     font-size: 1.5rem;
     font-weight: bold;
-    padding: 8px 15px;
+    padding: 10px 20px;
     border-radius: 8px;
     display: inline-block;
     margin-bottom: 15px;
     backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .espacio-title {
@@ -34,6 +40,7 @@
     text-transform: uppercase;
     line-height: 1.1;
     margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .espacio-title span {
@@ -41,79 +48,90 @@
 }
 
 .espacio-description {
-    font-size: 1.1rem;
-    max-width: 1000px;
-    margin: 10px auto 0;
-    line-height: 1.5;
-    opacity: 1;
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 15px auto 0;
+    line-height: 1.6;
+    opacity: 0.9;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
 }
+
 
 .espacio-background {
     position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 1;
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
 }
+
 
 .espacio-background img {
-    width: 1000px;
-    max-width: 100%;
-    animation: fadeIn 2s ease-in-out;
-    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1.1);
+    transition: filter 0.3s ease;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+/* 🌞 MODO CLARO 🌞 */
+.espacio.light {
+    background-color: #ffffff;
+    color: #222;
 }
+
+
+.espacio.light .espacio-title {
+    color: #222;
+    text-shadow: none;
+}
+
+.espacio.light .espacio-title span {
+    color: #6a11cb;
+}
+
+.espacio.light .espacio-description {
+    background: rgba(255, 255, 255, 0.7);
+    color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+.espacio.light .espacio-background img {
+    filter: brightness(0.9) contrast(1);
+}
+
 
 @media (max-width: 768px) {
     .espacio-title {
-        font-size: 2.5rem;
+        font-size: 2.8rem;
     }
     .espacio-description {
         font-size: 1rem;
-        margin-top: 5px;
+        padding: 10px;
+        border-radius: 8px;
     }
     .espacio-greeting {
         font-size: 1.3rem;
-        padding: 6px 12px;
-    }
-    .espacio-background {
-        top: 20%;
-    }
-    .espacio-background img {
-        width: 400px;
+        padding: 8px 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .espacio {
-        height: auto;
-        padding: 40px 10px;
-    }
     .espacio-title {
         font-size: 2rem;
     }
     .espacio-description {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
     .espacio-greeting {
         font-size: 1.1rem;
-        padding: 4px 10px;
-    }
-    .espacio-background {
-        top: 25%;
-    }
-    .espacio-background img {
-        width: 300px;
+        padding: 6px 12px;
     }
 }

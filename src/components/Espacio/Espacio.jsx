@@ -1,35 +1,36 @@
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import { useSelector } from 'react-redux';
 import "./Espacio.css"; 
-import planetImage from "../../assets/tierraoscura.jpg"; 
-
+import darkPlanetImage from "../../assets/tierraoscura.jpg"; 
+import lightPlanetImage from "../../assets/tierraclara.webp"; 
 import { CarouselMarquee } from "../CarouselMarquee/CarouselMarquee.jsx";
-
-
+import { textos } from "../../utils/textos";
 
 const Espacio = () => {
+  const idioma = useSelector(state => state.ui.idioma);
+  const modoClaro = useSelector(state => state.ui.modoClaro);
+
+  const textoEspacio = textos[idioma].espacio;
+  const backgroundImage = modoClaro ? lightPlanetImage : darkPlanetImage; 
+
   return (
-    <section className="espacio">
+    <section className={`espacio ${modoClaro ? 'light' : 'dark'}`}>
       <div className="espacio-content">
-      <p className="espacio-greeting">¡Bienvenido a mi Portafolio!</p>
+        <p className="espacio-greeting">{textoEspacio.bienvenida}</p>
         <h1 className="espacio-title">
-          <span>FrontEnd</span> Developer.
+          <span>{textoEspacio.especialidad}</span> {textoEspacio.puesto}.
         </h1>
         <p className="espacio-description">
-          Desarrollador Web de Buenos Aires, Argentina. Me especializo en desarrollo Front-end, con experiencia en la creación de interfaces de usuario eficientes y visualmente atractivas.
+          {textoEspacio.descripcion}
         </p>
       </div>
-   
-      <div className="espacio-background">
-        <img src={planetImage} alt="Tierra Oscura" />
-      </div>
-      <div>
-    <CarouselMarquee />
-    
-</div>
 
+      <div className="espacio-background">
+        <img src={backgroundImage} alt="Tierra" />
+      </div>
+
+      <CarouselMarquee />
     </section>
   );
 };
 
-export  {Espacio};
+export { Espacio };

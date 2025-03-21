@@ -1,29 +1,35 @@
-import { Layout } from "../../components/Layout/Layout";
+import { useSelector } from 'react-redux';
 import "./Home.css";
 import { Espacio } from "../../components/Espacio/Espacio";
 import { SobreMi } from "../../components/Sobre-Mi/Sobre-Mi";
 import { Muestra } from "../../components/Muestra/Muestra";
 import { Formacion } from "../../components/Formacion/Formacion";
+import { textos } from "../../utils/textos";
 
 const Home = () => {
+  const idioma = useSelector(state => state.ui.idioma);
+  const modoClaro = useSelector(state => state.ui.modoClaro);
+
+  const textoHome = textos[idioma].home;
+
   return (
-    <Layout>
+    <div className={`home-container ${modoClaro ? 'light' : 'dark'}`}>
       <div id="espacio">
-        <Espacio />
+        <Espacio texto={textoHome} />
       </div>
 
       <div className="ss" id="sobreMi">
-        <SobreMi />
+        <SobreMi texto={textoHome} />
       </div>
 
       <div id="formacion">
-        <Formacion />
+        <Formacion texto={textoHome} />
       </div>
 
       <div id="proyectos">
-        <Muestra />
+        <Muestra texto={textoHome} />
       </div>
-    </Layout>
+    </div>
   );
 };
 

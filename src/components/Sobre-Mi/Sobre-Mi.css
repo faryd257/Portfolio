@@ -57,7 +57,7 @@ section {
   box-shadow: 0 4px 15px rgba(143, 68, 253, 0.4);
 }
 
-/* Responsive (Tablet) */
+
 @media (max-width: 768px) {
   section {
     padding: 3rem 1rem;
@@ -76,7 +76,7 @@ section {
   }
 }
 
-/* Responsive (Celular) */
+
 @media (max-width: 480px) {
   section {
     padding: 2rem 0.5rem;
@@ -99,4 +99,48 @@ section {
   .cv-descripcion {
     font-size: 1rem;
   }
+}
+
+
+
+
+.sobre-mi-section.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.sobre-mi-section.dark .cv-header {
+  color: #fff;
+}
+
+.sobre-mi-section.dark .cv-descripcion {
+  color: #ccc;
+}
+
+/* 🌞 Modo Claro 🌞 */
+.sobre-mi-section.light {
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+.sobre-mi-section.light .sobre-mi-parrafo strong {
+  color: #6a11cb;
+}
+
+.sobre-mi-section.light .cv-header {
+  color: #222;
+}
+
+.sobre-mi-section.light .cv-descripcion {
+  color: #444;
+}
+
+.sobre-mi-section.light .cv-container a {
+  background-color: #8f44fd;
+  color: #fff;
+}
+
+.sobre-mi-section.light .cv-container a:hover {
+  background-color: #6a11cb;
+  box-shadow: 0 4px 15px rgba(143, 68, 253, 0.4);
 }

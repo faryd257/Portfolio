@@ -61,7 +61,7 @@
   opacity: 0.8;
 }
 
-/* Estilos responsivos */
+
 @media (max-width: 768px) {
   .footer-info {
       flex-direction: column;
@@ -73,4 +73,17 @@
       align-items: center;
       gap: 1rem;
   }
+}
+.footer-container.light {
+  background-color: #f9f9f9;
+  color: #222;
+  border-top: 1px solid #ccc;
+}
+
+.footer-container.light .footer-links a {
+  color: #222;
+}
+
+.footer-container.light .footer-links a:hover {
+  color: #8f44fd;
 }

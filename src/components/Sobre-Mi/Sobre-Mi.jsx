@@ -1,27 +1,30 @@
+import { useSelector } from 'react-redux';
+import { textos } from "../../utils/textos";
 import "./Sobre-Mi.css";
 
 const SobreMi = () => {
+  const idioma = useSelector(state => state.ui.idioma);
+  const modoClaro = useSelector(state => state.ui.modoClaro);
+
+  const textoSobreMi = textos[idioma].sobreMi;
+
   return (
-    <section className="sobre-mi-section text-white py-5">
+    <section className={`sobre-mi-section ${modoClaro ? 'light' : 'dark'}`}>
       <div className="container text-center">
-        <h2 className="sobre-mi-titulo">Sobre mí</h2>
+        <h2 className="sobre-mi-titulo">{textoSobreMi.titulo}</h2>
         <p className="sobre-mi-parrafo">
-          ¡Hola! Soy <strong>Faryd Ignacio Tupak Ortiz Abalos</strong>,
-          desarrollador Front End con un toque creativo. Me dedico a diseñar
-          interfaces atractivas y funcionales que mejoren la experiencia de
-          usuario. Disfruto trabajar en equipo, compartir ideas y aprender
-          continuamente para llevar cada proyecto al siguiente nivel.
+          {textoSobreMi.presentacion} <strong>Faryd Ignacio Tupak Ortiz Abalos</strong>, {textoSobreMi.descripcion}.
         </p>
         <p className="sobre-mi-parrafo">
-          Gracias por tomarte el tiempo de leer sobre mí. ¡Espero que pronto podamos trabajar juntos y crear soluciones memorables!
+          {textoSobreMi.agradecimiento}
         </p>
 
         <div className="cv-container">
           <h3 className="cv-header">
-            A continuación te dejo mi CV para que puedas conocer más sobre mi trayectoria.
+            {textoSobreMi.cvHeader}
           </h3>
           <p className="cv-descripcion">
-            En él encontrarás detalles acerca de mi formación, proyectos en los que he trabajado y habilidades que he desarrollado.
+            {textoSobreMi.cvDescripcion}
           </p>
 
           <a
@@ -30,7 +33,7 @@ const SobreMi = () => {
             rel="noopener noreferrer"
             className="cv-btn"
           >
-            Ver mi CV
+            {textoSobreMi.verCv}
           </a>
         </div>
       </div>

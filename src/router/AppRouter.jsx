@@ -1,26 +1,19 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "../Pages/Home/Home";
-
+import { Contacto } from "../Pages/Contacto/Contacto";
 import { Layout } from "../components/Layout/Layout";
 
-
-import { Contacto } from "../Pages/Contacto/Contacto";
-
-const AppRouter = ()=>{
-  return(
-
+const AppRouter = () => {
+  return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-       
-        <Route path="/layout" element={<Layout />} />
-       
-        <Route path="/contacto" element={<Contacto />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/contacto" element={<Contacto />} />
+        </Route>
       </Routes>
     </Router>
+  );
+};
 
-  )
-}
-
-export{AppRouter}
+export { AppRouter };

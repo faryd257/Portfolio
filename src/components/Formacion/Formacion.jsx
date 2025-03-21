@@ -1,60 +1,66 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { textos } from "../../utils/textos";
 import "./Formacion.css";
 
 const Formacion = () => {
+  const idioma = useSelector(state => state.ui.idioma);
+  const modoClaro = useSelector(state => state.ui.modoClaro);
+  const texto = textos[idioma].formacion;
+
   const certificados = [
     {
       id: 1,
-      titulo: "Certificado de Front-End",
-      descripcion: "Curso de Desarrollo Front-End en [UTN].",
+      titulo: texto.certificados[0].titulo,
+      descripcion: texto.certificados[0].descripcion,
       imagen: "/certificados/front-inicial.png",
     },
     {
       id: 2,
-      titulo: "Certificado de JavaScript",
-      descripcion: "Curso de Desarrollo en JavaScript en [UTN].",
+      titulo: texto.certificados[1].titulo,
+      descripcion: texto.certificados[1].descripcion,
       imagen: "/certificados/2-JavaScript.png",
     },
     {
       id: 3,
-      titulo: "Certificado de Html5 y Css3",
-      descripcion: "Curso de Desarrollo web en Html5 y Css3 en [UTN].",
+      titulo: texto.certificados[2].titulo,
+      descripcion: texto.certificados[2].descripcion,
       imagen: "/certificados/2.png",
     },
     {
       id: 4,
-      titulo: "Certificado de WordPress",
-      descripcion: "Curso de Diseño Web con WordPress en [UTN].",
+      titulo: texto.certificados[3].titulo,
+      descripcion: texto.certificados[3].descripcion,
       imagen: "/certificados/WordPress4.png",
     },
     {
       id: 5,
-      titulo: "Certificado de Html5  Css3 y JavaScript",
-      descripcion: "Curso de Html5  Css3 y JavaScript (Nivel Avanzado) en [UTN].",
+      titulo: texto.certificados[4].titulo,
+      descripcion: texto.certificados[4].descripcion,
       imagen: "/certificados/5.png",
     },
     {
       id: 6,
-      titulo: "Certificado de Bootstrap",
-      descripcion: "Curso de Desarrollo web en Bootstrap en [UTN].",
+      titulo: texto.certificados[5].titulo,
+      descripcion: texto.certificados[5].descripcion,
       imagen: "/certificados/6.png",
     },
     {
       id: 7,
-      titulo: "Professional Front End Developer",
-      descripcion: "Curso de Professional Front End Developer [UTN].",
+      titulo: texto.certificados[6].titulo,
+      descripcion: texto.certificados[6].descripcion,
       imagen: "/certificados/7.png",
     },
     {
       id: 8,
-      titulo: "Certificado de Quality Assurance",
-      descripcion: "Curso de Quality Assurance en [LinkedIn].",
+      titulo: texto.certificados[7].titulo,
+      descripcion: texto.certificados[7].descripcion,
       imagen: "/certificados/Q.A.png",
     },
     {
       id: 9,
-      titulo: "Certificado de React JS",
-      descripcion: "Curso de Desarrollo en React JS en [UTN].",
+      titulo: texto.certificados[8].titulo,
+      descripcion: texto.certificados[8].descripcion,
       imagen: "/certificados/8.png",
     },
   ];
@@ -66,22 +72,17 @@ const Formacion = () => {
   };
 
   return (
-    <section className="container my-5 certificaciones">
+    <section className={`container my-5 certificaciones ${modoClaro ? 'light' : 'dark'}`}>
       <div className="row mb-4">
         <div className="col-12 text-center">
-          <h2 className="mb-3">Certificaciones</h2>
-          <p className="lead">
-            En esta sección podrás ver mi formación académica y profesional, así
-            como un panorama de mis conocimientos en diferentes tecnologías.
-          </p>
+          <h2 className="mb-3">{texto.titulo}</h2>
+          <p className="lead">{texto.descripcion}</p>
         </div>
       </div>
 
       <div className="row mb-4">
         <div className="col-12 text-center">
-          <h5 className="mb-3">
-            Selecciona una de mis certificaciones para verla en detalle:
-          </h5>
+          <h5 className="mb-3">{texto.indicacion}</h5>
           <button
             className="btn btn-outline-primary"
             type="button"
@@ -89,7 +90,7 @@ const Formacion = () => {
             data-bs-target="#offcanvasCertificados"
             aria-controls="offcanvasCertificados"
           >
-            <span className="navbar-toggler"></span> Menú de Certificados
+            <span className="navbar-toggler"></span> {texto.menuBoton}
           </button>
         </div>
       </div>
@@ -101,7 +102,7 @@ const Formacion = () => {
         aria-labelledby="offcanvasCertificadosLabel"
       >
         <div className="offcanvas-header">
-          <h5 id="offcanvasCertificadosLabel">Selecciona un Certificado</h5>
+          <h5 id="offcanvasCertificadosLabel">{texto.menuTitulo}</h5>
           <button
             type="button"
             className="btn-close"
@@ -147,9 +148,7 @@ const Formacion = () => {
               </div>
             </div>
           ) : (
-            <p className="text-center">
-              Selecciona un certificado del menú para visualizarlo.
-            </p>
+            <p className="text-center">{texto.placeholder}</p>
           )}
         </div>
       </div>

@@ -28,3 +28,28 @@
   padding: 1rem;
   border-radius: 0 0 0.25rem 0.25rem;
 }
+/* 🌞 Modo Claro 🌞 */
+.certificaciones.light {
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+.certificaciones.light .text-background {
+  background-color: #ffffff;
+  color: #222;
+}
+
+.certificaciones.light .btn-outline-primary {
+  border-color: #6a11cb;
+  color: #6a11cb;
+}
+
+.certificaciones.light .btn-outline-primary:hover {
+  background-color: #6a11cb;
+  color: white;
+}
+
+.certificaciones.light .list-group-item {
+  background-color: #fff;
+  color: #333;
+}

@@ -1,6 +1,7 @@
-// Header.jsx
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import { cambiarIdioma, toggleModoClaro } from '../../redux/uiSlice';
 import "./Header.css";
 
 const Header = () => {
@@ -9,77 +10,33 @@ const Header = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
 
-  const cerrarMenu = () => {
-    setMenuAbierto(false);
-  };
+  const idioma = useSelector(state => state.ui.idioma);
+  const modoClaro = useSelector(state => state.ui.modoClaro); // 👈 ESTA LÍNEA FALTABA
+
+  const cerrarMenu = () => setMenuAbierto(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const irAlEspacio = () => {
+  const irASeccion = (id) => {
     if (location.pathname === "/") {
-      const seccionEspacio = document.getElementById("espacio");
-      if (seccionEspacio) {
-        seccionEspacio.scrollIntoView({ behavior: "smooth" });
-      }
-      cerrarMenu();
+      const seccion = document.getElementById(id);
+      seccion?.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate("/#espacio");
-      cerrarMenu();
+      navigate(`/#${id}`);
     }
-  };
-
-  const irASobreMi = () => {
-    if (location.pathname === "/") {
-      const seccionSobreMi = document.getElementById("sobreMi");
-      if (seccionSobreMi) {
-        seccionSobreMi.scrollIntoView({ behavior: "smooth" });
-      }
-      cerrarMenu();
-    } else {
-      navigate("/#sobreMi");
-      cerrarMenu();
-    }
-  };
-
-  const irAProyectos = () => {
-    if (location.pathname === "/") {
-      const seccionProyectos = document.getElementById("proyectos");
-      if (seccionProyectos) {
-        seccionProyectos.scrollIntoView({ behavior: "smooth" });
-      }
-      cerrarMenu();
-    } else {
-      navigate("/#proyectos");
-      cerrarMenu();
-    }
-  };
-
-  const irAFormacion = () => {
-    if (location.pathname === "/") {
-      const seccionFormacion = document.getElementById("formacion");
-      if (seccionFormacion) {
-        seccionFormacion.scrollIntoView({ behavior: "smooth" });
-      }
-      cerrarMenu();
-    } else {
-      navigate("/#formacion");
-      cerrarMenu();
-    }
+    cerrarMenu();
   };
 
   return (
-    <header className={`header ${scrolled ? "header-scrolled" : ""}`}>
+    <header className={`header ${scrolled ? "header-scrolled" : ""} ${modoClaro ? 'light' : 'dark'}`}>
       <a
         href="https://www.linkedin.com/in/faryd-ignacio-ortiz/"
         target="_blank"
@@ -89,55 +46,57 @@ const Header = () => {
         <img src="/profile.png" alt="Mi perfil de LinkedIn" />
       </a>
 
-      <button
-        className="menu-icono"
-        onClick={() => setMenuAbierto(!menuAbierto)}
-      >
+      <button className="menu-icono" onClick={() => setMenuAbierto(!menuAbierto)}>
         ☰
       </button>
 
       <nav className={menuAbierto ? "menu abierto" : "menu"}>
         <ul>
           <li>
-            <button className="btn-enlace" onClick={irAlEspacio}>
-              inicio
+            <button className="btn-enlace" onClick={() => irASeccion('espacio')}>
+              {idioma === 'es' ? 'Inicio' : 'Home'}
             </button>
           </li>
           <li>
-            <button className="btn-enlace" onClick={irASobreMi}>
-              Sobre Mi
+            <button className="btn-enlace" onClick={() => irASeccion('sobreMi')}>
+              {idioma === 'es' ? 'Sobre mí' : 'About Me'}
             </button>
           </li>
           <li>
-            <button className="btn-enlace" onClick={irAProyectos}>
-              Proyectos
+            <button className="btn-enlace" onClick={() => irASeccion('proyectos')}>
+              {idioma === 'es' ? 'Proyectos' : 'Projects'}
             </button>
           </li>
-
           <li>
-            <button className="btn-enlace" onClick={irAFormacion}>
-              Formación
+            <button className="btn-enlace" onClick={() => irASeccion('formacion')}>
+              {idioma === 'es' ? 'Formación' : 'Education'}
             </button>
           </li>
-
           <li>
             <Link to="/Contacto" onClick={cerrarMenu}>
-              Contacto
+              {idioma === 'es' ? 'Contacto' : 'Contact'}
             </Link>
           </li>
         </ul>
 
+        <div className="botones-configuracion">
+          <button className="btn-idioma" onClick={() => dispatch(cambiarIdioma())}>
+            {idioma === 'es' ? 'English' : 'Español'}
+          </button>
+
+          <button className="btn-modo" onClick={() => dispatch(toggleModoClaro())}>
+            {modoClaro ? (idioma === 'es' ? 'Modo Oscuro' : 'Dark Mode') : (idioma === 'es' ? 'Modo Claro' : 'Light Mode')}
+          </button>
+        </div>
+
         {menuAbierto && (
           <button className="cerrar-menu" onClick={cerrarMenu}>
-            Cerrar
+            {idioma === 'es' ? 'Cerrar' : 'Close'}
           </button>
         )}
       </nav>
     </header>
   );
 };
-
-
-
 
 export { Header };

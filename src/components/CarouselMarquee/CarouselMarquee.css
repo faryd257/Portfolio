@@ -2,14 +2,13 @@
   width: 37%;
   margin: 0 auto;
   overflow: hidden;
-
   padding: 20px 0;
   z-index: 10;
 }
 
 .marquee-content {
   display: flex;
-  animation: marquee 15s linear infinite;
+  animation: marquee 12s linear infinite;
 }
 
 @keyframes marquee {
@@ -21,6 +20,7 @@
   }
 }
 
+
 .tech-item {
   min-width: 120px;
   margin: 0 24px;
@@ -31,17 +31,47 @@
   transition: transform 0.3s ease-in-out;
 }
 
-
 .tech-item svg {
   width: 80px;  
   height: 80px;
 }
 
 .tech-item:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .tech-item span {
   margin-top: 5px;
   font-size: 1rem;
+}
+
+/* 🌑 Modo Oscuro */
+.carousel-marquee.dark {
+  background-color: transparent; 
+}
+
+.tech-item {
+  color: #fff;
+}
+
+/* 🌞 Modo Claro */
+.carousel-marquee.light {
+  background-color: transparent; 
+}
+
+.carousel-marquee.light .tech-item {
+  color: #222;
+}
+
+
+@media (max-width: 768px) {
+  .marquee-content {
+    animation: marquee 7s linear infinite; 
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-content {
+    animation: marquee 5s linear infinite; 
+  }
 }
