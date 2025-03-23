@@ -136,7 +136,7 @@
 .header.light .menu a,
 .header.light .btn-enlace,
 .header.light .menu-icono {
-  color: #222;
+  color: #fff;
 }
 
 .header.light .perfil img {
@@ -148,7 +148,7 @@
   color: #6a11cb;
 }
 
-/* 💜 Mejoras en los botones de idioma y modo oscuro */
+
 .botones-configuracion {
   display: flex;
   gap: 12px;
