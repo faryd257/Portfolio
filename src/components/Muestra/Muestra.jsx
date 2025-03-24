@@ -92,10 +92,16 @@ const Muestra = () => {
           </div>
         ))}
       </div>
+      <button
+  onClick={() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    navigate("/");
+  }}
+  className="btn btn-secondary mt-3 ini"
+>
+  Volver al Inicio
+</button>
 
-      <button onClick={() => navigate("/")} className="btn btn-secondary mt-3">
-        Volver al Inicio
-      </button>
     </div>
   );
 };
